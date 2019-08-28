@@ -3,6 +3,7 @@ import { gql } from 'apollo-server';
 const typeDefs = gql`
   type Query {
     chats: [Chat!]!
+    chat(chatId: ID!): Chat
   }
 
   scalar Date
@@ -18,6 +19,7 @@ const typeDefs = gql`
     name: String!
     picture: String
     lastMessage: Message
+    messages: [Message!]!
   }
 `;
 
